@@ -28,6 +28,7 @@ The base URL will be your public Hugging Face Space URL (e.g., **https://[your-s
 6) **POST /api/batch** - Batch analysis: This is an efficient endpoint for processing multiple texts at once. A developer can send a list of comments in a single request and receive an array of predictions.
 
 **How to Improve the Model's Accuracy**
+
 The model still makes wrong predictions, which is a very common issue with ML models. The great news is that your model is specifically designed to be improved! This is where the Reinforcement Learning (RL) agent and your team's feedback become crucial.
 
 **Here’s how you can use the live deployment to improve the accuracy:**
