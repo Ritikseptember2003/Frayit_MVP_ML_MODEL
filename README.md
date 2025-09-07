@@ -27,3 +27,13 @@ The base URL will be your public Hugging Face Space URL (e.g., **https://[your-s
 
 6) **POST /api/batch** - Batch analysis: This is an efficient endpoint for processing multiple texts at once. A developer can send a list of comments in a single request and receive an array of predictions.
 
+**How to Improve the Model's Accuracy**
+The model still makes wrong predictions, which is a very common issue with ML models. The great news is that your model is specifically designed to be improved! This is where the Reinforcement Learning (RL) agent and your team's feedback become crucial.
+
+**Here’s how you can use the live deployment to improve the accuracy:**
+
+1) **Direct Feedback via the Gradio UI:** The Gradio interface you've built on Hugging Face is the simplest way to improve the model. When you get an incorrect prediction, you can click the Correct or Incorrect buttons. Each time you do this, the RL agent gets a reward or a penalty, which it uses to adjust its internal logic and improve its predictions over time.
+
+2) **Gathering Team Feedback:** Encourage your team members to use the live app and provide feedback whenever they see a wrong prediction. The more feedback the model gets on diverse, real-world examples, the more its accuracy will improve. The RL Epsilon value on your dashboard will start to decrease, indicating that the model is learning from experience.
+
+3) **Retraining the Model:** For more significant improvements, you can collect the feedback data and periodically retrain your entire model (the ensemble of XGBoost and Logistic Regression) on a larger, more balanced dataset. After retraining, you can upload the new **enhanced_toxicity_model.pkl** and **rl_toxicity_agent.pkl** files to your Hugging Face Space.
